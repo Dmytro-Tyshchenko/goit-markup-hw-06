@@ -247,6 +247,11 @@ body {
 
 .icon-positon {
   position: absolute;
+  display: flex;
+  align-items: center;
+}
+.button-close:focus use {
+  fill: var(--accent-color);
 }
 
 .modal-container {
@@ -287,6 +292,10 @@ body {
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
 }
+.modal-input:focus {
+  outline: none;
+  border-color: var(--accent-color);
+}
 
 .modal-svg {
   position: absolute;
@@ -296,7 +305,9 @@ body {
   width: 18px;
   height: 18px;
 }
-
+.modal-input:focus ~ .modal-svg {
+  fill: var(--accent-color);
+}
 .modal-button {
   padding: 10px 56px;
   margin: 0 auto;
@@ -329,13 +340,23 @@ body {
   line-height: 1.16;
   letter-spacing: 0.01em;
 }
+.comment-textarea:focus {
+  outline: none;
+  border-color: var(--accent-color);
+}
+textarea::placeholder {
+  color: rgba(117, 117, 117, 0.5);
+}
+.checkbox-link-color {
+  color: var(--accent-color);
+}
 .checkbox {
   display: flex;
   align-items: center;
   margin: 0 0 30px 0;
 }
 
-.cheeckbox-block {
+.checkbox-block {
   position: absolute;
   white-space: nowrap;
   width: 1px;
@@ -347,14 +368,14 @@ body {
   clip-path: inset(50%);
   margin: -1px;
 }
-.cheeckbox-icon {
+.checkbox-icon {
   margin-right: 8px;
   width: 16px;
   height: 15px;
   border: 2px solid var(--primary-text-color);
-  border-radius: 4px;
+  border-radius: 3px;
 }
-.cheeckbox-block:checked + .cheeckbox-icon {
+.checkbox-block:checked + .checkbox-icon {
   border-color: transparent;
   background-color: var(--accent-color);
   background-image: url(../images/icon-check.svg);
